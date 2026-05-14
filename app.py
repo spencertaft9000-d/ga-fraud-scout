@@ -4,6 +4,12 @@ import numpy as np
 from sklearn.ensemble import IsolationForest
 import plotly.express as px
 
+try:
+    from sklearn.ensemble import IsolationForest
+except ImportError:
+    st.error("scikit-learn is not installed. Please check requirements.txt")
+    st.stop()
+
 st.set_page_config(page_title="GA Fraud Scout", layout="wide")
 st.title("🕵️ GA Fraud Scout: Georgia Public Data Fraud Detector")
 st.markdown("**Prototype v1.2.2** — Robust Hover + Click (Error Fixed)")
